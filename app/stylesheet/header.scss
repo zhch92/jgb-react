@@ -1,0 +1,36 @@
+.header {
+    padding: 25px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    .head {
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        .logo {
+            width: 187px;
+            height: 57px;
+            img{
+                width: 100%;
+            }
+        }
+        .nav {
+            position: absolute;
+            right: 0px;
+            top:50%;
+            margin-top: -15px;
+            li {
+                float: left;
+                margin-right: 20px;
+                list-style: none;
+                line-height: 30px;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

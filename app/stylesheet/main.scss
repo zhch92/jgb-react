@@ -1,0 +1,292 @@
+@import './global.scss';
+html,
+body,
+#content,
+
+    .swiper-container {
+        width: 100%;
+        position: relative;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+.main1-bg {
+    width: 100%;
+    height: 100%;
+    background: url('../images/index/bg001.jpg');
+    background-size: cover;
+}
+
+.main2-bg {
+    width: 100%;
+    height: 100%;
+    background: url('../images/index/bg002.jpg');
+    background-size: 100% 100%;
+}
+
+.main3-bg {
+    width: 100%;
+    height: 100%;
+    background: url('../images/index/bg003.jpg');
+    background-size: cover;
+    position: relative;
+    .footer {
+        width: 1200px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -600px;
+        span {
+            margin-right: 100px;
+            margin-left: 60px;
+            padding: 15px 0 15px 30px;
+            font-size: 18px;
+            color: #333;
+            &:nth-child(1) {
+                background: url('../images/index/address.png') no-repeat 5px center;
+                background-size: 14px 21px;
+            }
+            &:nth-child(2) {
+                background: url('../images/index/phone.png') no-repeat 3px center;
+                background-size: 21px 22px;
+            }
+            &:nth-child(3) {
+                background: url('../images/index/weixin.png') no-repeat 0px center;
+                background-size: 24px 24px;
+            }
+        }
+    }
+}
+
+.main1 {
+    width: 1200px;
+    // height: 100%;
+    padding-top: 107px;
+    margin: 0 auto;
+    .left {
+        float: left;
+        width: 620px;
+        height: 150px;
+        padding: 10px;
+        margin-top: 100px;
+        background: url('../images/index/banner-1-border.png');
+        background-size: 100% 100%;
+        .box {
+            background: hsla(0, 0%, 100%, .7);
+            display: flex;
+            justify-content: center;
+            .left-l {
+                height: 150px;
+                line-height: 150px;
+                font-size: 60px;
+                color: $themeColor;
+            }
+            .left-m {
+                height: 2px;
+                width: 60px;
+                background: $themeColor;
+                margin: 79px 5px 0;
+            }
+            .left-r {
+                margin-top: 48px;
+                span {
+                    font-size: 20px;
+                    color: #666;
+                    &:last-child {
+                        color: $themeColor;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        float: left;
+        width: 305px;
+        padding: 40px 20px 20px;
+        background: hsla(0, 0%, 100%, .7);
+        margin-left: 215px;
+        margin-top: 100px;
+        div {
+            margin-bottom: 20px;
+            position: relative;
+            &.user {
+                border: 1px solid $themeColor;
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -10px;
+                    width: 20px;
+                    height: 20px;
+                    padding-right: 5px;
+                    border-right: 1px dotted $themeColor;
+                    background: url('../images/common/login-username.png') no-repeat center;
+                }
+            }
+            &.pwd {
+                border: 1px solid $themeColor;
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -10px;
+                    width: 20px;
+                    height: 20px;
+                    padding-right: 5px;
+                    border-right: 1px dotted $themeColor;
+                    background: url('../images/common/login-password.png') no-repeat center;
+                }
+            }
+            input {
+                border: none;
+                outline: none;
+                padding: 10px 20px 10px 30px;
+                width: 253px;
+                background: hsla(0, 0%, 100%, .7);
+            }
+            button {
+                width: 100%;
+                background: $themeColor;
+                line-height: 44px;
+                color: #fff;
+                border: none;
+                outline: none;
+            }
+            &.handle {
+                span {
+                    // background: ;
+                    padding-left: 15px;
+                    font-size: 14px;
+                    color: #666;
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -6px;
+                        width: 12px;
+                        height: 12px;
+                        background: url('../images/common/checkbox.png') no-repeat;
+                        background-position: 0px 0px;
+                    }
+                    .selected {
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            margin-top: -6px;
+                            width: 12px;
+                            height: 12px;
+                            background: url(../images/common/checkbox.png) no-repeat;
+                            background-position: -68px 0px;
+                        }
+                    }
+                }
+                a {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 14px;
+                    color: #666;
+                    text-decoration: none;
+                }
+            }
+            &.register {
+                text-align: right;
+                a {
+                    color: $themeColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.main2 {
+    padding-top: 107px;
+    width: 1200px;
+    margin: 0 auto;
+    h3 {
+        margin: 100px 0;
+        text-align: center;
+        font-size: 30px;
+        font-weight: normal;
+    }
+    .advantage-img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+        div {
+            width: 121px;
+            height: 121px;
+            position: relative;
+            &:after {
+                display: block;
+                position: absolute;
+                content: '';
+                left: 50%;
+                margin-left: -8px;
+                bottom: -60px;
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-top: 15px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 15px solid transparent;
+            }
+            &:nth-child(1) {
+                background: url('../images/index/advantage.png') no-repeat;
+            }
+            &:nth-child(2) {
+                margin: 0 100px;
+                background: url('../images/index/advantage1.png') no-repeat;
+            }
+            &:nth-child(3) {
+                background: url('../images/index/advantage2.png') no-repeat;
+            }
+            &.active {
+            	background-position: 0 -121px;
+                &:after {
+                    border-bottom-color: #a6a6a6;
+                }
+            }
+        }
+    }
+    .advantage-text {
+        padding: 50px 0;
+        border-top: 1px solid #a6a6a6;
+        border-bottom: 1px solid #a6a6a6;
+        p {
+            color: $themeColor;
+            text-align: center;
+            display: none;
+            &:nth-child(1){
+            	display: block;
+            }
+        }
+    }
+}
+
+.main3 {
+    padding-top: 107px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    h3 {
+        margin: 100px 0;
+        text-align: center;
+        font-size: 30px;
+        font-weight: normal;
+    }
+    .company {
+        display: flex;
+        justify-content: space-around;
+        background: #fff;
+        padding: 40px 0;
+    }
+}
