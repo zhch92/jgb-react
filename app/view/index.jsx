@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery'
 
-import '../stylesheet/main.scss';
+import './stylesheet/main.scss';
 
 export default class main extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ export default class main extends React.Component {
    
   render() {
     return (
+        <div  className='swiper-container'>
         <div className='swiper-wrapper' >
            <div className="main1-bg swiper-slide">
         <div className="main1 clearfix">
@@ -60,9 +61,9 @@ export default class main extends React.Component {
         <div className="main3 ">
             <h3>合作伙伴</h3>
             <div className="company">
-                <img src="../app/images/index/changxin-hover.png" alt="" />
-                <img src="../app/images/index/guangfa-hover.png" alt="" />
-                <img src="../app/images/index/liantai-hover.png" alt="" />
+                <img src="../app/view/images/index/changxin-hover.png" alt="" />
+                <img src="../app/view/images/index/guangfa-hover.png" alt="" />
+                <img src="../app/view/images/index/liantai-hover.png" alt="" />
             </div>
         </div>
         <div className="footer">
@@ -72,6 +73,7 @@ export default class main extends React.Component {
         </div>
     </div>
         </div>
+    <div className="swiper-pagination"></div></div>
 
     );
   }
