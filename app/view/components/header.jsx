@@ -20,7 +20,7 @@ export default class header extends React.Component {
                     <li><Link to="help/index">帮助中心</Link></li>
                     <li><Link to="account">我的账户</Link></li>
                     <li><Link to="register">注册</Link></li>
-                    <li><Link to="login">登陆</Link></li>
+                    <li><Link to="login">登录</Link></li>
                 </ul>
             </div>
         </div>

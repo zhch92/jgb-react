@@ -40,9 +40,9 @@ module.exports = {
             test: /\.scss$/,
             loaders: ['style', 'css', 'sass']
         }, {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=40000'
-      }]
+            test: /\.(png|jpg)$/,
+            loader: 'url?limit=40000'
+        }]
     },
     plugins: [
         new HtmlwebpackPlugin({

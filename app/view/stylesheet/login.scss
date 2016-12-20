@@ -1,0 +1,148 @@
+@import "define";
+#login {
+    width: 100%;
+    margin-top: 107px;
+    color: $colorBlack;
+    border-top: 1px solid #dadada;
+    .login-form {
+        overflow: hidden;
+        position: relative;
+        background: #ffffff;
+        .content {
+            width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding-bottom: 30px;
+            .title {
+                margin-top: 45px;
+                border-bottom: 1px solid #dadada;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                span {
+                    font-size: 20px;
+                    color: $colorBlue;
+                    border-bottom: 2px solid $colorBlue;
+                    letter-spacing: 3px;
+                    padding: 5px 10px;
+                }
+            }
+            .left {
+                width: 369px;
+                padding: 70px 140px 150px 30px;
+                float: left;
+                border-right: 1px solid #dadada;
+                .head {
+                    padding: 15px 0 30px 0;
+                    p {
+                        margin: 0;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                }
+                .row {
+                    width: 100%;
+                    margin-bottom: 30px;
+                    position: relative;
+                    span {
+                        font-size: 15px;
+                    }
+                    input {
+                        height: 40px;
+                        width: 270px;
+                        padding-left: 20px;
+                        margin-left: 10px;
+                        border: 1px solid $borderColor;
+                    }
+                    .forget {
+                        position: absolute;
+                        right: -80px;
+                        width: 75px;
+                        top: 10px;
+                        span {
+                            color: $colorBlue;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .right {
+                float: left;
+                width: 350px;
+                padding-left: 60px;
+                padding-top: 70px;
+                .text{
+                    p{
+                        font-size: 16px;
+                        color: $colorBlue;
+                        margin-bottom: 35px;
+                        font-weight: 400;
+                    }
+                    .row{
+                        margin-bottom: 10px;
+                        font-size: 14px; 
+                        background: url('../images/common/arrow.png') no-repeat 0 center;
+                        color: #666;
+                        padding-left: 20px;
+                    }
+                }
+                .img{
+                    height: 135px;
+                    margin-top: 50px;
+                    img{
+                      height: 100%;  
+                    }
+                    span{
+                        font-size: 14px;
+                        position: relative;
+                        top: -50%;
+                        margin-top: 7px;
+                        color: #666;
+
+                    }
+                    
+                }
+            }
+            .login.btn {
+                width: 100%;
+                padding: 8px 0;
+                color: #fff;
+                background-color: $colorBlue;
+                font-size: 18px;
+                display: block;
+                text-align: center;
+                em{
+                  font-style: normal;
+                }
+            }
+            .register {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 16px;
+                a {
+                    color: $colorBlue;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .logged-area {
+        width: 200px;
+        margin: 40px auto 0 auto;
+        padding: 20px 0;
+        border: 1px solid $colorBlue;
+        text-align: center;
+        background-color: $colorWhite;
+        p {
+            margin: 0;
+            font-size: 15px;
+        }
+        .logout.btn {
+            width: 150px;
+            margin: 10px auto 0 auto;
+            padding: 5px 0;
+            font-size: 15px;
+            color: $colorWhite;
+            background-color: $colorBlue;
+        }
+    }
+}

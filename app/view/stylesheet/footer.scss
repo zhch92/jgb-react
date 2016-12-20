@@ -1,7 +1,105 @@
-div.chrome {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    box-shadow: 0 0 4px #999, 0 0 2px #ddd inset;
-    background: radial-gradient(circle, #4FACF5 0, #2196F3 28%, transparent 28%), radial-gradient(circle, #fff 33%, transparent 33%), linear-gradient(-50deg, #FFEB3B 34%, transparent 34%), linear-gradient(60deg, #4CAF50 33%, transparent 33%), linear-gradient(180deg, #FF756B 0, #F44336 30%, transparent 30%), linear-gradient(-120deg, #FFEB3B 40%, transparent 40%), linear-gradient(-60deg, #FFEB3B 30%, transparent 30%), linear-gradient(0deg, #4CAF50 45%, transparent 45%), linear-gradient(60deg, #4CAF50 30%, transparent 30%), linear-gradient(120deg, #F44336 50%, transparent 50%), linear-gradient(180deg, #F44336 30%, transparent 30%);
-}
+/* 变量定义 */
+    $fontColor: #ddd;
+    /* 底部样式 */
+    #footer {
+        width: 100%;
+        background-color: #7c7c7c;
+        .first {
+            height: 125px;
+            padding: 15px 0 0 0;
+            .content {
+                max-width: 1200px;
+                margin: 0 auto;
+                .left {
+                    float: left;
+                    width: 45%;
+                    min-width: 480px;
+                    margin-left: 10%;
+                    .block {
+                        height: 90px;
+                        display: inline-flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        vertical-align: top;
+                    }
+                    .block:nth-child(1) {
+                        width: 100px;
+                        margin-right: 50px;
+                        a {
+                            display: block;
+                            color: #ffffff;
+                            font-size: 14px;
+                            cursor: pointer;
+                            text-decoration: none;
+                        }
+                    }
+                    .block:nth-child(2) {
+                        height:80px;
+                        .row {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                width: 22px;
+                                height: 22px;
+                                margin-right: 5px;
+                            }
+                            span {
+                                color: #dadada;
+                                font-size: 14px
+                            }
+                        }
+                        .row:nth-child(1) {
+                            span {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+                .middle {
+                    float: left;
+                    margin-top: 10px;
+                    text-align: center;
+                    .row {
+                        span {
+                            color: $fontColor;
+                        }
+                    }
+                    .row:first-child {
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+                    .row:last-child {
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                }
+                .right {
+                    float: right;
+                    width: 15%;
+                    text-align: center;
+                    span {
+                        display: block;
+                        font-size: 12px;
+                        color: $fontColor;
+                    }
+                    img {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        .copyright {
+            height: 30px;
+            text-align: center;
+            background-color: #7c7c7c;
+            clear: both;
+            span {
+                display: block;
+                padding-top: 10px;
+                font-size: 12px;
+                color: $fontColor;
+                position:relative;
+                left: -80px;
+            }
+        }
+    }

@@ -1,0 +1,101 @@
+@import "define";
+#safe {
+    color: $colorBlack;
+
+    .banner {
+        // background-color: #74c1f7;
+        background:url('../images/safe/safe_banner.jpg') no-repeat 50% 70%;
+        background-size: 100% 100%;
+        padding-top: 140px;
+        width: 100%;
+        height: 410px;
+        .content {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .text {
+            float: left;
+            margin: 55px 0 0 10%;
+            color: #ffffff;
+        }
+        .img {
+            float: right;
+            margin: 49px 10% 0 0;
+        }
+        h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            font-weight: normal;
+        }
+        p {
+            width: 350px;
+            margin: 0;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        p:last-child {
+            font-size: 14px;
+        }
+        // img {
+        //     width: 100%;
+        // }
+    }
+    .section {
+        padding: 75px 0;
+        text-align: center;
+        .head {
+            p {
+                margin: 0;
+                strong {
+                    color: #1b65ce;
+                    font-weight: normal;
+                }
+                &:first-child {
+                    width: 120px;
+                    margin: 0 auto 25px auto;
+                    padding: 5px 0;
+                    font-size: 24px;
+                    color: #1b65ce;
+                }
+                &:nth-child(2) {
+                    color: #7e7e7e;
+                    font-size: 16px;
+                }
+            }
+        }
+        .content {
+            padding-top: 40px;
+            .block {
+                display: inline-block;
+                img {
+                    width: 135px;
+                    height: 135px;
+                }
+                p {
+                    margin: 10px 0 0 0;
+                    font-size: 16px;
+                }
+                &:nth-child(2) {
+                    margin: 0 60px 0 120px;
+                }
+                &:nth-child(3) {
+                    margin: 0 120px 0 60px;
+                }
+            }
+        }
+    }
+    .first.section {
+        background-color: $colorWhite;
+        .content {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+    .second.section {}
+    .third.section {
+        background-color: $colorWhite;
+    }
+}
