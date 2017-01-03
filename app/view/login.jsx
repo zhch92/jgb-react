@@ -30,12 +30,18 @@ const LoginFrom=React.createClass({
   	if (tel!='' && pwd !='') {
   		console.log(tel+'------'+pwd);
   		$.ajax({
-  			url:'http://10.10.10.202/jgb-web/v1/organ/login',
+  			url:'./jgb-web/v1/organ/login',
   			type:'post',
   			dataType:'json',
   			data:{passwd:pwd,telphone:tel},
-  			success:function(data){
-              console.log(data.data.status)
+  			success:function(re){
+        if (re.status===1) {
+              console.log('登录成功')
+        }else{
+              console.log('登录失败')
+
+        }
+
   			}
   		})
   	} else {

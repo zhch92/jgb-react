@@ -21,7 +21,13 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        progress: true
+        progress: true,
+        proxy: {  
+            '/jgb-web/*': {  
+                target: 'http://10.10.10.202',  
+                secure: false  
+            }  
+        } 
     },
     resolve: {
         extensions: ['', '.js', '.jsx']

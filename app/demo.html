@@ -7,24 +7,94 @@
 </head>
 
 <body>
-    <script>
-    function bubbleSort(arr) {
-        var len = arr.length;
-        for (var i = 0; i < len; i++) {
-            for (var j = 0; j < len - 1 - i; j++) {
-                if (arr[j] > arr[j + 1]) { //相邻元素两两对比
-                    var temp = arr[j + 1]; //交互位置,所以大的都放到了最后面
-                    arr[j + 1] = arr[j];
-                    arr[j] = temp;
-
-                }
-            }
+    <style class="cp-pen-styles">
+    @-webkit-keyframes show {
+        0% {
+            transform: rotateX(0deg);
+            opacity: 0;
         }
-        return arr;
+
+        100% {
+            transform: rotateX(-90deg);
+            opacity: 1;
+        }
     }
-    var arr = [2, 3, 6, 4, 2, 1, 90, 100, 20, 5];
-    console.log(bubbleSort(arr)); // [1, 2, 2, 3, 4, 5, 6, 20, 90, 100]
-    </script>
-</body>
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .box {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 100px auto;
+    }
+    
+    .box-ul,
+    .box li {
+        width: 300px;
+        height: 400px;
+    }
+    
+    .box-ul {
+        transform-style: preserve-3d;
+        perspective: 800px;
+    }
+    
+    .box li {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .box li.show {
+        /* -webkit-transform: rotateX(0deg); */
+        -webkit-animation: show 2s;
+        opacity: 1;
+    }
+    
+      </style>
+    </head>
+
+    <body>
+        <div class="box">
+            <ul class="box-ul">
+                <li class="show" ><img src="http://localhost:8080/static/img/7.d8ad057.png"></li>
+                <li ><img src="http://ww3.sinaimg.cn/mw690/9c7cd2cdjw1e60hntjcq2j211y0lcq5e.jpg"></li>
+                <li ><img src="http://ww3.sinaimg.cn/mw690/9c7cd2cdjw1e60hntjcq2j211y0lcq5e.jpg"></li>
+                <li ><img src="http://ww3.sinaimg.cn/mw690/9c7cd2cdjw1e60hntjcq2j211y0lcq5e.jpg"></li>
+                <li ><img src="http://ww3.sinaimg.cn/mw690/9c7cd2cdjw1e60hntjcq2j211y0lcq5e.jpg"></li>
+            </ul>
+            <a href="javascript:;">上一张</a>
+            <a href="javascript:;">下一张</a>
+        </div>
+        <!-- <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js'></script> -->
+        <script>
+        window.onload = function() {
+            var aA = document.getElementsByTagName('a'),
+                aLi = document.getElementsByTagName('li');
+            var len = aLi.length - 1,
+                n = 0;
+            aA[0].onclick = function() {
+                aLi[n].className = 'hide';
+                n--;
+                n = n < 0 ? len : n;
+                aLi[n].className = 'show';
+            };
+            aA[1].onclick = function() {
+                aLi[n].className = 'hide';
+                n++;
+                n = n > len ? 0 : n;
+                aLi[n].className = 'show';
+            };
+        };
+        //# sourceURL=pen.js
+        </script>
+    </body>
 
 </html>
