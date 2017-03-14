@@ -48,6 +48,9 @@ const LoginFrom=React.createClass({
   		console.log('账号或密码不能为空')
   	};
   },
+
+
+
   telChange: function(e) {
       this.setState({tel: e.target.value});
     },

@@ -16,18 +16,14 @@ module.exports = {
     },
     //enable dev source map
     devtool: 'eval-source-map',
-    //enable dev server
     devServer: {
-        historyApiFallback: true,
-        hot: true,
-        inline: true,
-        progress: true,
-        proxy: {  
-            '/jgb-web/*': {  
-                target: 'http://10.10.10.202',  
-                secure: false  
-            }  
-        } 
+        proxy: {
+            '/jgb-web/v1': {
+                target: 'http://10.10.10.204:9096',
+                // target: 'http://www.51jigoubao.com',
+                secure: false
+            }
+        }
     },
     resolve: {
         extensions: ['', '.js', '.jsx']

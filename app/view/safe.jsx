@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './components/footer'
 
 import  './stylesheet/safe.scss'
 export default class safe extends React.Component {
@@ -8,6 +9,7 @@ export default class safe extends React.Component {
 
   render() {
     return (
+        <div>
       <div id="safe">
         <div className="banner">
         <div className="content">
@@ -77,7 +79,10 @@ export default class safe extends React.Component {
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+        <Footer />
+        </div>
+
     );
   }
 }

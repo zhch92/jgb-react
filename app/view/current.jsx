@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery'
 
 import Footer from './components/footer'
 import  './stylesheet/current.scss'
@@ -11,7 +12,39 @@ export default class current extends React.Component {
   render() {
     return (
       <div>
-       <div id="current">
+       <Currents />
+       <Footer />
+      </div>
+    );
+  }
+}
+// http://localhost:8080/jgb-web/v1/products/rec
+// http://localhost:8787/jgb-web/v1/products/rec
+const Currents=React.createClass({
+  getInitialState: function() {
+    return {currentObj:''};
+    
+  },
+componentWillMount:function(){
+  const _this=this;
+  $.ajax({
+        url: './jgb-web/v1/products/rec',
+        type: 'GET',
+        dataType: 'json',
+        success: function(re) {
+            var reData=re.data;
+            console.log(reData)
+            if (reData) {
+             _this.setState({currentObj:reData})
+            }
+
+        }
+    })  
+},
+  render(){
+    const currentInfo=this.state.currentObj;
+    return (
+     <div id="current">
         <div className="first section">
             <div className="container">
                 <div className="left">
@@ -33,7 +66,7 @@ export default class current extends React.Component {
                             <span>机构宝七日年化收益率</span>
                         </div>
                         <div className="middle">
-                            <span>2.7120%</span>
+                            <span>{currentInfo.seventhYearYield*100}00%</span>
                         </div>
                         <div className="bottom">
                             <button >已登录</button>
@@ -52,18 +85,18 @@ export default class current extends React.Component {
                     <img src="app/view/images/current/icon.png" />
                 </div>
                 <div className="name">
-                    <p>广发钱袋子货币</p>
+                    <p>{currentInfo.decription}</p>
                 </div>
                 <div className="week">
-                    <p>2.7120%</p>
+                    <p>{currentInfo.seventhYearYield*100}00%</p>
                     <p>7日年化收益率</p>
                 </div>
                 <div className="day">
-                    <p>0.6194元</p>
+                    <p>{currentInfo.yieldPerMillion}元</p>
                     <p>日万份收益</p>
                 </div>
                 <div className="time">
-                    <p>实时到账</p>
+                    <p>{(currentInfo.endDate==null)?'实时到账':'T+1到账'}</p>
                     <p>取现到账时间</p>
                 </div>
                 <div className="buy">
@@ -102,9 +135,7 @@ export default class current extends React.Component {
                 </div>
             </div>
         </div>
-    </div>
-       <Footer />
-      </div>
-    );
+        </div>        )
+   
   }
-}
+})
