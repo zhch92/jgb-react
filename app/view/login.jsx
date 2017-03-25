@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import Fetch from 'react-fetch'
 import $ from 'jquery'
 import './stylesheet/login.scss'
 import Footer from './components/footer'
@@ -27,23 +28,47 @@ const LoginFrom=React.createClass({
   testClick:function(){
   	let tel=this.state.tel;
   	let pwd=this.state.pwd;
+    let url='./jgb-web/v1/organ/login';
+    let formData = new FormData();  
+    formData.append("passwd",pwd);  
+    formData.append("telphone",tel); 
   	if (tel!='' && pwd !='') {
   		console.log(tel+'------'+pwd);
-  		$.ajax({
-  			url:'./jgb-web/v1/organ/login',
-  			type:'post',
-  			dataType:'json',
-  			data:{passwd:pwd,telphone:tel},
-  			success:function(re){
-        if (re.status===1) {
-              console.log('登录成功')
-        }else{
-              console.log('登录失败')
+    fetch(url , {  
+     method: 'POST',  
+     headers: {'Content-Type':'application/json;charset=UTF-8'},
+     body: `passwd=${pwd}&telphone=${tel}`, 
 
-        }
+    }).then((response) => {  
+     if (response.ok) {  
+         return response.json();  
+     }
+     }  
+    ).then((json) => {  
+     console.log(JSON.stringify(json));  
+    }).catch((error) => {  
+     console.error(error);  
+    });  
 
-  			}
-  		})
+  		// $.ajax({
+    //     headers: {
+    //      Accept:'application/json, text/plain',
+    //      'Content-Type':'application/json;charset=UTF-8',
+    //     },
+  		// 	url:'./jgb-web/v1/organ/login',
+  		// 	type:'post',
+  		// 	dataType:'json',
+  		// 	data:{passwd:pwd,telphone:tel},
+  		// 	success:function(re){
+    //     if (re.status===1) {
+    //           console.log('登录成功')
+    //     }else{
+    //           console.log('登录失败')
+
+    //     }
+
+  		// 	}
+  		// })
   	} else {
   		console.log('账号或密码不能为空')
   	};
