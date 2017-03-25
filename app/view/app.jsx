@@ -7,6 +7,7 @@ import Current from './current';
 import Index from './index';
 import Login from './login';
 import Register from './register';
+import Account from './account';
 import Safe from './safe';
 import HelpIdex from './help/index';
 import HelpIdex1 from './help/index1';
@@ -34,6 +35,7 @@ ReactDOM.render((
       <Route path="login" component={Login} />
       <Route path="register" component={Register} />
       <Route path="safe" component={Safe} />
+      <Route path="account" component={Account} />
       <Route path="help/index" component={HelpIdex} />
       <Route path="help/index1" component={HelpIdex} />
     </Route>

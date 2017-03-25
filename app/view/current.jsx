@@ -1,4 +1,5 @@
 import React from 'react';
+import Fetch from 'react-fetch'
 import $ from 'jquery'
 
 import Footer from './components/footer'
@@ -27,19 +28,33 @@ const Currents=React.createClass({
   },
 componentWillMount:function(){
   const _this=this;
-  $.ajax({
-        url: './jgb-web/v1/products/rec',
-        type: 'GET',
-        dataType: 'json',
-        success: function(re) {
-            var reData=re.data;
+  var url='./jgb-web/v1/products/rec';
+   fetch(url).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+            var reData=data.data;
             console.log(reData)
             if (reData) {
              _this.setState({currentObj:reData})
             }
+      }).catch(function(e) {
+        console.log("Oops, error");
+      });
 
-        }
-    })  
+  // const _this=this;
+  // $.ajax({
+  //       url: './jgb-web/v1/products/rec',
+  //       type: 'GET',
+  //       dataType: 'json',
+  //       success: function(re) {
+  //           var reData=re.data;
+  //           console.log(reData)
+  //           if (reData) {
+  //            _this.setState({currentObj:reData})
+  //           }
+
+  //       }
+  //   })  
 },
   render(){
     const currentInfo=this.state.currentObj;

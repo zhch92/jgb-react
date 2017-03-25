@@ -8,7 +8,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
     entry: {
-        app: path.resolve(APP_PATH, './view/home.jsx')
+        app: path.resolve(APP_PATH, './view/app.jsx')
     },
     output: {
         path: BUILD_PATH,
@@ -19,12 +19,25 @@ module.exports = {
     devServer: {
         proxy: {
             '/jgb-web/v1': {
-                target: 'http://10.10.10.204:9096',
-                // target: 'http://www.51jigoubao.com',
+                // target: 'http://10.10.10.204',
+                target: 'http://www.51jigoubao.com',
                 secure: false
             }
         }
     },
+    // devServer: {
+    //     historyApiFallback: true,
+    //     hot: true,
+    //     inline: true,
+    //     stats: { colors: true },
+    //     proxy: {
+    //         '/jgb-web': {
+    //           target: 'http://10.10.10.204',
+    //           pathRewrite: {'^/v1' : '/v1'},
+    //           changeOrigin: true
+    //         }
+    //      }
+    // },
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
