@@ -19,8 +19,10 @@ module.exports = {
     devServer: {
         proxy: {
             '/jgb-web/v1': {
-                target: 'http://10.10.10.204:9096',
-                // target: 'http://www.51jigoubao.com',
+                // target: 'http://10.10.10.204:9096',
+                target: 'http://www.51jigoubao.com',
+                host: "www.51jigoubao.com",
+                origin: "http://www.51jigoubao.com",
                 secure: false
             }
         }
